@@ -1,0 +1,6 @@
+[submodule "thirdparty/StackWalker"]
+	path = thirdparty/StackWalker
+	url = https://github.com/JochenKalmbach/StackWalker
+[submodule "thirdparty/Detours"]
+	path = thirdparty/Detours
+	url = https://github.com/microsoft/Detours
