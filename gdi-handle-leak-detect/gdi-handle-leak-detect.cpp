@@ -2,19 +2,75 @@
 //
 
 #include <iostream>
+#include <windows.h>
+#include <thread>
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    DWORD detectedProcessId = 0;
+    std::cout << "enter detected process id:";
+    std::cin >> detectedProcessId;
+    std::cout << "get process id: " << detectedProcessId << std::endl;
+
+    HANDLE process = OpenProcess(PROCESS_ALL_ACCESS, FALSE, detectedProcessId);
+    if (process == NULL)
+    {
+        std::cout << "OpenProcess " << detectedProcessId << " failed, GetLastError() return: " << GetLastError() << ", you can try launch this tools as admin." << std::endl;
+        return -1;
+    }
+
+    char dllName[10] = { 0 };
+    LPVOID pRemoteData = VirtualAllocEx(process, NULL, sizeof(dllName), MEM_COMMIT, PAGE_READWRITE);
+    if (pRemoteData == NULL)
+    {
+        std::cout << "VirtualAllocEx failed, GetLastError() return: " << GetLastError() << ", you can try launch this tools as admin." << std::endl;
+        return -1;
+    }
+
+    sprintf_s(dllName, sizeof(dllName), "%s", "ghld.dll");
+    if (WriteProcessMemory(process, pRemoteData, dllName, sizeof(dllName), NULL) != TRUE)
+    {
+        std::cout << "WriteProcessMemory failed, GetLastError() return: " << GetLastError() << ", you can try launch this tools as admin." << std::endl;
+        return true;
+    }
+
+    HANDLE remoteThread = CreateRemoteThread(process, NULL, 0, (LPTHREAD_START_ROUTINE)::LoadLibraryA, pRemoteData, 0, NULL);
+    if (remoteThread == NULL)
+    {
+        std::cout << "CreateRemoteThread failed, GetLastError() return: " << GetLastError() << ", you can try launch this tools as admin." << std::endl;
+        return -1;
+    }
+    WaitForSingleObject(remoteThread, INFINITE);
+
+    DWORD dwLibMod;
+    if (GetExitCodeThread(remoteThread, &dwLibMod) == TRUE)
+    {
+        std::cout << "remote lib: " << dwLibMod << std::endl;
+    }
+    else
+    {
+        std::cout << "cant get remote lib" << std::endl;
+    }
+    CloseHandle(remoteThread);
+    VirtualFreeEx(process, pRemoteData, sizeof(dllName), MEM_RELEASE);
+    while (true)
+    {
+        char c = getchar();
+        if (c == 'e')
+            break;
+    }
+    std::cout << "clear" << std::endl;
+    remoteThread = CreateRemoteThread(process, NULL, 0, (LPTHREAD_START_ROUTINE)::FreeLibrary, (LPVOID)dwLibMod, 0, NULL);
+    if (remoteThread == NULL)
+    {
+        std::cout << "CreateRemoteThread failed, GetLastError() return: " << GetLastError() << ", you can try launch this tools as admin." << std::endl;
+        return -1;
+    }
+    WaitForSingleObject(remoteThread, INFINITE);
+    CloseHandle(remoteThread);
+
+    CloseHandle(process);
+
+    return 0;
 }
-
-// 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
-// 调试程序: F5 或调试 >“开始调试”菜单
-
-// 入门使用技巧: 
-//   1. 使用解决方案资源管理器窗口添加/管理文件
-//   2. 使用团队资源管理器窗口连接到源代码管理
-//   3. 使用输出窗口查看生成输出和其他消息
-//   4. 使用错误列表窗口查看错误
-//   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
-//   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
