@@ -86,11 +86,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IPC_EXPORT=;WIN32;_DEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\cpp-ipc\include;$(SolutionDir)thirdparty\cpp-ipc\src;$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -104,11 +104,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IPC_EXPORT=;WIN32;NDEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\cpp-ipc\include;$(SolutionDir)thirdparty\cpp-ipc\src;$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -122,11 +122,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IPC_EXPORT=;_DEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\cpp-ipc\include;$(SolutionDir)thirdparty\cpp-ipc\src;$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,11 +140,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IPC_EXPORT=;NDEBUG;GHLD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\cpp-ipc\include;$(SolutionDir)thirdparty\cpp-ipc\src;$(SolutionDir)thirdparty\StackWalker\Main\StackWalker;$(SolutionDir)thirdparty\Detours\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -155,6 +155,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\buffer.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\def.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\export.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\ipc.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\pool_alloc.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\rw_lock.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\shm.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\tls_pointer.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\waiter.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\circ\elem_array.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\circ\elem_def.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\alloc.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\allocator_wrapper.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\resource.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\wrapper.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\detail.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\get_sa.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\tls_detail_win.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\tls_pointer_win.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\to_tchar.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\waiter_win.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\waiter_wrapper.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\policy.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\prod_cons.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\queue.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\concept.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\id_pool.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\log.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\pimpl.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\scope_guard.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\utility.h" />
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\waiter_helper.h" />
     <ClInclude Include="..\thirdparty\Detours\src\detours.h" />
     <ClInclude Include="..\thirdparty\Detours\src\detver.h" />
     <ClInclude Include="..\thirdparty\StackWalker\Main\StackWalker\StackWalker.h" />
@@ -163,6 +195,14 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\buffer.cpp" />
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\ipc.cpp" />
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\libipc\platform\shm_win.cpp" />
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\libipc\platform\tls_pointer_win.cpp" />
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\pool_alloc.cpp" />
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\shm.cpp" />
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\tls_pointer.cpp" />
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\waiter.cpp" />
     <ClCompile Include="..\thirdparty\Detours\src\creatwth.cpp" />
     <ClCompile Include="..\thirdparty\Detours\src\detours.cpp" />
     <ClCompile Include="..\thirdparty\Detours\src\disasm.cpp" />
@@ -182,6 +222,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\thirdparty\cpp-ipc\src\libipc\waiter_template.inc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

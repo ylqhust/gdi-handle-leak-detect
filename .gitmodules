@@ -4,3 +4,6 @@
 [submodule "thirdparty/Detours"]
 	path = thirdparty/Detours
 	url = https://github.com/microsoft/Detours
+[submodule "thirdparty/cpp-ipc"]
+	path = thirdparty/cpp-ipc
+	url = https://github.com/mutouyun/cpp-ipc

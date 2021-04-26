@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="cpp-ipc">
+      <UniqueIdentifier>{bbd43f03-52f5-49ac-88ab-8a636c07a2e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -32,6 +35,102 @@
     </ClInclude>
     <ClInclude Include="ghldmgr.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\policy.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\prod_cons.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\queue.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\waiter_helper.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\circ\elem_array.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\circ\elem_def.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\alloc.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\allocator_wrapper.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\resource.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\memory\wrapper.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\detail.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\get_sa.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\tls_detail_win.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\tls_pointer_win.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\to_tchar.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\waiter_win.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\platform\waiter_wrapper.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\concept.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\id_pool.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\log.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\pimpl.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\scope_guard.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\src\libipc\utility\utility.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\buffer.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\def.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\export.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\ipc.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\pool_alloc.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\rw_lock.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\shm.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\tls_pointer.h">
+      <Filter>cpp-ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\waiter.h">
+      <Filter>cpp-ipc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,5 +176,34 @@
     <ClCompile Include="ghldmgr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\buffer.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\ipc.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\pool_alloc.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\shm.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\tls_pointer.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\waiter.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\libipc\platform\shm_win.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\cpp-ipc\src\libipc\platform\tls_pointer_win.cpp">
+      <Filter>cpp-ipc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\thirdparty\cpp-ipc\src\libipc\waiter_template.inc">
+      <Filter>cpp-ipc</Filter>
+    </None>
   </ItemGroup>
 </Project>
