@@ -16,21 +16,18 @@
     <Filter Include="cpp-ipc">
       <UniqueIdentifier>{bbd43f03-52f5-49ac-88ab-8a636c07a2e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="detours">
+      <UniqueIdentifier>{25a55b1a-f09d-4a5c-b02d-69cfab19f89f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stackwalker">
+      <UniqueIdentifier>{34fb1030-69d5-4269-9dd5-d748a0abc537}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\thirdparty\StackWalker\Main\StackWalker\StackWalker.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\thirdparty\Detours\src\detours.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\thirdparty\Detours\src\detver.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ghldmgr.h">
@@ -132,45 +129,21 @@
     <ClInclude Include="..\thirdparty\cpp-ipc\include\libipc\waiter.h">
       <Filter>cpp-ipc</Filter>
     </ClInclude>
+    <ClInclude Include="..\thirdparty\Detours\src\detours.h">
+      <Filter>detours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\Detours\src\detver.h">
+      <Filter>detours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\StackWalker\Main\StackWalker\StackWalker.h">
+      <Filter>stackwalker</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\StackWalker\Main\StackWalker\StackWalker.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\creatwth.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\detours.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\disasm.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\disolarm.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\disolarm64.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\disolia64.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\disolx64.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\disolx86.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\image.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thirdparty\Detours\src\modules.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ghldmgr.cpp">
@@ -199,6 +172,39 @@
     </ClCompile>
     <ClCompile Include="..\thirdparty\cpp-ipc\src\libipc\platform\tls_pointer_win.cpp">
       <Filter>cpp-ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\creatwth.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\detours.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\disasm.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\disolarm.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\disolarm64.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\disolia64.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\disolx64.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\disolx86.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\image.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\Detours\src\modules.cpp">
+      <Filter>detours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\StackWalker\Main\StackWalker\StackWalker.cpp">
+      <Filter>stackwalker</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
